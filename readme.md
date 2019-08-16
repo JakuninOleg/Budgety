@@ -1,4 +1,4 @@
-*Budgety*
+***Budgety***
 
 **Pre-ES-6 budget app**
 
