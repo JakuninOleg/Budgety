@@ -251,6 +251,18 @@ var UIController = (function () {
       });
     },
 
+    displayMonth: function () {
+      var now, year, month;
+
+      now = new Date();
+
+      year = now.getFullYear();
+
+      month = now.toLocaleString('en', { month: 'long' });
+
+      document.querySelector(DOMStrings.dateLabel).textContent = month + ' ' + year;
+    },
+
     getDOMStrings: function () {
       return DOMStrings;
     }
@@ -345,6 +357,7 @@ var controller = (function (budgetCtrl, UICtrl) {
   return {
     init: function () {
       setupEventListeners();
+      UICtrl.displayMonth();
       UICtrl.displayBudget({
         budget: 0,
         totalInc: 0,
